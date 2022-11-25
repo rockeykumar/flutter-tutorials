@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/loginScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      // home: MyHomePage(),
+      home: LoginScreen(),
     );
   }
 }
@@ -32,12 +34,12 @@ class MyHomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Image.asset(
-                'lib/assets/icons/pngegg.png',
+                'assets/images/pngegg.png',
                 width: 50,
                 height: 50,
                 color: Colors.purple[700],
               ),
-              Text("Coin Change!"),
+              const Text("Coin Change!"),
             ],
           ),
         ),
