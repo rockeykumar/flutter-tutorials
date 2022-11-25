@@ -24,8 +24,20 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(child: Text("CoinAge")),
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            Image.asset(
+              'lib/assets/icons/pngegg.png',
+              width: 50,
+              height: 50,
+              color: Colors.purple[700],
+            ),
+            Text("Coin Change!"),
+          ],
+        ),
+      ),
     );
   }
 }
