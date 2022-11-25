@@ -26,16 +26,20 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            Image.asset(
-              'lib/assets/icons/pngegg.png',
-              width: 50,
-              height: 50,
-              color: Colors.purple[700],
-            ),
-            Text("Coin Change!"),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset(
+                'lib/assets/icons/pngegg.png',
+                width: 50,
+                height: 50,
+                color: Colors.purple[700],
+              ),
+              Text("Coin Change!"),
+            ],
+          ),
         ),
       ),
     );
