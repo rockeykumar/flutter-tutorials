@@ -40,7 +40,7 @@ class _InputBoxCustomState extends State<InputBoxCustom> {
               child: TextField(
                 controller: countryCode,
                 enabled: false,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   border: InputBorder.none,
                   hintText: "+91",
                 ),

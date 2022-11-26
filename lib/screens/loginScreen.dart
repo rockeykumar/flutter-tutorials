@@ -1,5 +1,6 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Widgets/rectangleRoundedButton.dart';
 import 'package:flutter_app/components/inputBox.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -100,44 +101,50 @@ class LoginScreen extends StatelessWidget {
 
                   // Button - Get OTP
                   const SizedBox(height: 30),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: SizedBox(
-                          height: 45,
-                          child: ElevatedButton(
-                            onPressed: () {},
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "Get OTP",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                Text(
-                                  ">",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                )
-                              ],
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.deepPurple[700],
-                              shape: RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.circular(borderRadiusValue),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+
+                  RectangleRoundedButton(
+                    buttonName: 'Get OTP',
+                    icon: ">",
+                    callback: () => print("callback function"),
                   ),
+                  // Row(
+                  //   children: [
+                  //     Expanded(
+                  //       child: SizedBox(
+                  //         height: 50,
+                  //         child: ElevatedButton(
+                  //           onPressed: () {},
+                  //           child: Row(
+                  //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //             children: [
+                  //               Text(
+                  //                 "Get OTP",
+                  //                 style: TextStyle(
+                  //                   fontWeight: FontWeight.bold,
+                  //                   color: Colors.white,
+                  //                 ),
+                  //               ),
+                  //               Text(
+                  //                 ">",
+                  //                 style: TextStyle(
+                  //                   fontWeight: FontWeight.bold,
+                  //                   color: Colors.white,
+                  //                 ),
+                  //               )
+                  //             ],
+                  //           ),
+                  //           style: ElevatedButton.styleFrom(
+                  //             backgroundColor: Colors.deepPurple[700],
+                  //             shape: RoundedRectangleBorder(
+                  //               borderRadius:
+                  //                   BorderRadius.circular(borderRadiusValue),
+                  //             ),
+                  //           ),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                   // Container(
                   //   decoration: BoxDecoration(
                   //     borderRadius: BorderRadius.circular(12),
@@ -224,6 +231,13 @@ class LoginScreen extends StatelessWidget {
                   //       ),
                   //     ),
                   //   ],
+                  // ),
+
+                  //
+                  // RectangleRoundedButton(
+                  //   buttonName: 'Get OTP',
+                  //   icon: ">",
+                  //   callback: () => print("callback function"),
                   // ),
                 ],
               ),
