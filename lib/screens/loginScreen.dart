@@ -11,6 +11,27 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.grey[300],
+        // title: Text("Coin Change!"),
+        elevation: 0,
+        automaticallyImplyLeading: true,
+        // leading: IconButton(
+        //   icon: Icon(Icons.chevron_left),
+        //   // onPressed: () => Navigator.pop(context),
+        //   onPressed: () => {},
+        //   color: Colors.deepPurple[700],
+        // ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Icon(
+              Icons.close,
+              color: Colors.deepPurple[700],
+            ),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: Center(
           child: Container(

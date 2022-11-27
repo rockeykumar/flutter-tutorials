@@ -27,6 +27,27 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.grey[700],
+        title: Text("Coin Change!"),
+        elevation: 0,
+        automaticallyImplyLeading: true,
+        leading: IconButton(
+          icon: Icon(Icons.chevron_left),
+          // onPressed: () => Navigator.pop(context),
+          onPressed: () => {},
+          color: Colors.deepPurple[700],
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: Icon(
+              Icons.close,
+              color: Colors.deepPurple[700],
+            ),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
