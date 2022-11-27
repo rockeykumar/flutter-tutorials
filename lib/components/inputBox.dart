@@ -1,5 +1,6 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 // import 'package:flutter/src/widgets/container.dart';
 // import 'package:flutter/src/widgets/framework.dart';
 
@@ -46,9 +47,9 @@ class _InputBoxCustomState extends State<InputBoxCustom> {
                 ),
               ),
             ),
-            const Text(
+            Text(
               "|",
-              style: TextStyle(fontSize: 25, color: Colors.grey),
+              style: TextStyle(fontSize: 25, color: Colors.grey[700]),
             ),
             const SizedBox(
               width: 10,
@@ -57,7 +58,9 @@ class _InputBoxCustomState extends State<InputBoxCustom> {
               child: TextField(
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
-                    border: InputBorder.none, hintText: "Number"),
+                  border: InputBorder.none,
+                  hintText: "Number",
+                ),
               ),
             ),
           ],

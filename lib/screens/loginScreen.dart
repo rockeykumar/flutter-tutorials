@@ -35,10 +35,10 @@ class LoginScreen extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Container(
-            color: Colors.grey[300],
+            // color: Colors.grey[300],
             child: Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 30.0, vertical: 50),
+                  const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 // mainAxisAlignment: MainAxisAlignment.center,
@@ -62,7 +62,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 140),
+                  const SizedBox(height: 100),
 
                   // Mobile Number Text
                   Text(
@@ -125,7 +125,7 @@ class LoginScreen extends StatelessWidget {
 
                   RectangleRoundedButton(
                     buttonName: 'Get OTP',
-                    icon: ">",
+                    icon: Icon(Icons.chevron_right),
                     callback: () => print("callback function"),
                   ),
                   // Row(

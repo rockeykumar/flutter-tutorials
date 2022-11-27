@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_app/Widgets/rectangleRoundedButton.dart';
 import 'package:flutter_app/screens/loginScreen.dart';
+import 'package:flutter_app/screens/otpScreen.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+    statusBarIconBrightness: Brightness.dark,
+  ));
   runApp(const MyApp());
 }
 
@@ -15,10 +22,11 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-      ),
+          primarySwatch: Colors.deepPurple,
+          scaffoldBackgroundColor: Colors.grey[300]),
       // home: MyHomePage(),
-      home: LoginScreen(),
+      // home: LoginScreen(),
+      home: OtpScreen(),
     );
   }
 }
@@ -28,8 +36,11 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey[700],
-        title: Text("Coin Change!"),
+        backgroundColor: Colors.transparent,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarIconBrightness: Brightness.light,
+        ),
+        title: Text("Coin Change...!"),
         elevation: 0,
         automaticallyImplyLeading: true,
         leading: IconButton(
@@ -61,6 +72,57 @@ class MyHomePage extends StatelessWidget {
                 color: Colors.purple[700],
               ),
               const Text("Coin Change!"),
+              ElevatedButton(
+                onPressed: () {
+                  SystemChrome.setSystemUIOverlayStyle(
+                    SystemUiOverlayStyle(
+                      statusBarColor: Colors.green,
+                      statusBarIconBrightness: Brightness.dark,
+                    ),
+                  );
+                },
+                child: Text("Change Status bar"),
+              ),
+              Container(
+                // width: 50,
+                // height: 70,
+                child: TextField(
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  textAlign: TextAlign.center,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  )),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                child: Text("test"),
+                decoration: BoxDecoration(
+                  // color: Colors.grey[200],
+                  border: Border.all(width: 10, color: Colors.red),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                // width: 50,
+                // height: 70,
+                child: TextField(
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  textAlign: TextAlign.center,
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8.0),
+                  )),
+                ),
+              ),
             ],
           ),
         ),

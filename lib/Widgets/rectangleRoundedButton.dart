@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class RectangleRoundedButton extends StatelessWidget {
   final String buttonName;
-  final String? icon;
+  final Icon? icon;
   final double? height;
   final VoidCallback? callback;
   final double borderRadiusValue;
@@ -41,13 +41,7 @@ class RectangleRoundedButton extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
-                  Text(
-                    icon!,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
+                  icon!
                 ],
               )
             : Text(
