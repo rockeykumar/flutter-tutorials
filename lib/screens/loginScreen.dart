@@ -1,12 +1,17 @@
-// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Widgets/rectangleRoundedButton.dart';
 import 'package:flutter_app/components/inputBox.dart';
+import 'package:flutter_app/screens/otpScreen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
   final double borderRadiusValue = 12;
   final double height_width_of_logo = 50;
+
+  void goToOTPVarificationPage(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const OtpScreen()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,20 +21,22 @@ class LoginScreen extends StatelessWidget {
         // title: Text("Coin Change!"),
         elevation: 0,
         automaticallyImplyLeading: true,
-        // leading: IconButton(
-        //   icon: Icon(Icons.chevron_left),
-        //   // onPressed: () => Navigator.pop(context),
-        //   onPressed: () => {},
-        //   color: Colors.deepPurple[700],
-        // ),
+
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20),
-            child: Icon(
-              Icons.close,
-              color: Colors.deepPurple[700],
+            child: IconButton(
+              iconSize: 25,
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              icon: Icon(
+                Icons.close,
+                color: Colors.deepPurple[700],
+              ),
+              onPressed: (() {}),
             ),
-          ),
+          )
         ],
       ),
       body: SafeArea(
@@ -106,7 +113,7 @@ class LoginScreen extends StatelessWidget {
                           activeColor: Colors.deepPurple[700],
                           value: true,
                           onChanged: ((value) {
-                            Text("TODO: not implemented...!");
+                            const Text("TODO: not implemented...!");
                           }),
                         ),
                       ),
@@ -124,10 +131,9 @@ class LoginScreen extends StatelessWidget {
                   const SizedBox(height: 30),
 
                   RectangleRoundedButton(
-                    buttonName: 'Get OTP',
-                    icon: Icon(Icons.chevron_right),
-                    callback: () => print("callback function"),
-                  ),
+                      buttonName: 'Get OTP',
+                      icon: const Icon(Icons.chevron_right),
+                      callback: (() => goToOTPVarificationPage(context))),
                   // Row(
                   //   children: [
                   //     Expanded(

@@ -25,8 +25,8 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.deepPurple,
           scaffoldBackgroundColor: Colors.grey[300]),
       // home: MyHomePage(),
-      // home: LoginScreen(),
-      home: OtpScreen(),
+      home: LoginScreen(),
+      // home: OtpScreen(),
     );
   }
 }

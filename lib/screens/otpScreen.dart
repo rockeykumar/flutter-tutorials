@@ -11,6 +11,11 @@ class OtpScreen extends StatelessWidget {
   final double borderRadiusValue = 12;
   final double height_width_of_logo = 50;
 
+  void goToLoginPage(BuildContext context) {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const OtpScreen()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +23,7 @@ class OtpScreen extends StatelessWidget {
         backgroundColor: Colors.grey[300],
         // title: Text("Coin Change!"),
         elevation: 0,
-        automaticallyImplyLeading: true,
+        automaticallyImplyLeading: false,
         // leading: IconButton(
         //   icon: Icon(Icons.chevron_left),
         //   // onPressed: () => Navigator.pop(context),
@@ -28,11 +33,18 @@ class OtpScreen extends StatelessWidget {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20),
-            child: Icon(
-              Icons.close,
-              color: Colors.deepPurple[700],
+            child: IconButton(
+              iconSize: 25,
+              splashColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              icon: Icon(
+                Icons.close,
+                color: Colors.deepPurple[700],
+              ),
+              onPressed: (() => Navigator.pop(context)),
             ),
-          ),
+          )
         ],
       ),
       body: SafeArea(
