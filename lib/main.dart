@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_app/Widgets/rectangleRoundedButton.dart';
 import 'package:flutter_app/screens/loginScreen.dart';
 import 'package:flutter_app/screens/otpScreen.dart';
+import 'package:flutter_app/screens/splashScreen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -25,8 +26,9 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.deepPurple,
           scaffoldBackgroundColor: Colors.grey[300]),
       // home: MyHomePage(),
-      home: LoginScreen(),
+      // home: LoginScreen(),
       // home: OtpScreen(),
+      home: const SplashScreen(),
     );
   }
 }
