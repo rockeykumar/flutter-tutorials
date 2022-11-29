@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:double_back_to_close/double_back_to_close.dart';
 import 'package:flutter_app/Widgets/rectangleRoundedButton.dart';
 import 'package:flutter_app/screens/dashboard.dart';
 import 'package:flutter_app/screens/loginScreen.dart';
@@ -29,8 +30,8 @@ class MyApp extends StatelessWidget {
       // home: MyHomePage(),
       // home: LoginScreen(),
       // home: OtpScreen(),
-      // home: const SplashScreen(),
-      home: const DashboardScreen(),
+      home: const SplashScreen(),
+      // home: const DashboardScreen(),
     );
   }
 }
@@ -63,71 +64,73 @@ class MyHomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Image.asset(
-                'assets/images/pngegg.png',
-                width: 50,
-                height: 50,
-                color: Colors.purple[700],
-              ),
-              const Text("Coin Change!"),
-              ElevatedButton(
-                onPressed: () {
-                  SystemChrome.setSystemUIOverlayStyle(
-                    SystemUiOverlayStyle(
-                      statusBarColor: Colors.green,
-                      statusBarIconBrightness: Brightness.dark,
-                    ),
-                  );
-                },
-                child: Text("Change Status bar"),
-              ),
-              Container(
-                // width: 50,
-                // height: 70,
-                child: TextField(
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  )),
+      body: DoubleBack(
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Image.asset(
+                  'assets/images/pngegg.png',
+                  width: 50,
+                  height: 50,
+                  color: Colors.purple[700],
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                width: 200,
-                height: 200,
-                child: Text("test"),
-                decoration: BoxDecoration(
-                  // color: Colors.grey[200],
-                  border: Border.all(width: 10, color: Colors.red),
-                  borderRadius: BorderRadius.circular(12),
+                const Text("Coin Change!"),
+                ElevatedButton(
+                  onPressed: () {
+                    SystemChrome.setSystemUIOverlayStyle(
+                      SystemUiOverlayStyle(
+                        statusBarColor: Colors.green,
+                        statusBarIconBrightness: Brightness.dark,
+                      ),
+                    );
+                  },
+                  child: Text("Change Status bar"),
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                // width: 50,
-                // height: 70,
-                child: TextField(
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                  textAlign: TextAlign.center,
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
-                  )),
+                Container(
+                  // width: 50,
+                  // height: 70,
+                  child: TextField(
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    textAlign: TextAlign.center,
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    )),
+                  ),
                 ),
-              ),
-            ],
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  width: 200,
+                  height: 200,
+                  child: Text("test"),
+                  decoration: BoxDecoration(
+                    // color: Colors.grey[200],
+                    border: Border.all(width: 10, color: Colors.red),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  // width: 50,
+                  // height: 70,
+                  child: TextField(
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    textAlign: TextAlign.center,
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    )),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

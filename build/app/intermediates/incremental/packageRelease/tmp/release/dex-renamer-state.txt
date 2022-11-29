@@ -1,4 +1,4 @@
-#Mon Nov 28 17:36:58 IST 2022
+#Tue Nov 29 19:03:15 IST 2022
 base.0=/home/stpl/Desktop/All File/Flutter Project/flutter-tutorials/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
