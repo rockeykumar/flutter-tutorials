@@ -20,7 +20,7 @@ class LoginScreen extends StatelessWidget {
         backgroundColor: Colors.grey[300],
         // title: Text("Coin Change!"),
         elevation: 0,
-        automaticallyImplyLeading: true,
+        automaticallyImplyLeading: false,
 
         actions: [
           Padding(
@@ -34,7 +34,9 @@ class LoginScreen extends StatelessWidget {
                 Icons.close,
                 color: Colors.deepPurple[700],
               ),
-              onPressed: (() {}),
+              onPressed: (() {
+                Navigator.pop(context);
+              }),
             ),
           )
         ],
