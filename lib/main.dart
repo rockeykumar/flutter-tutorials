@@ -5,6 +5,7 @@ import 'package:flutter_app/Widgets/rectangleRoundedButton.dart';
 import 'package:flutter_app/screens/dashboard.dart';
 import 'package:flutter_app/screens/loginScreen.dart';
 import 'package:flutter_app/screens/otpScreen.dart';
+import 'package:flutter_app/screens/personalScreen.dart';
 import 'package:flutter_app/screens/splashScreen.dart';
 
 void main() {
@@ -30,8 +31,9 @@ class MyApp extends StatelessWidget {
       // home: MyHomePage(),
       // home: LoginScreen(),
       // home: OtpScreen(),
-      home: const SplashScreen(),
+      // home: const SplashScreen(),
       // home: const DashboardScreen(),
+      home: PersonalScreen(),
     );
   }
 }
