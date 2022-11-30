@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -43,177 +45,176 @@ class PersonalScreen extends StatelessWidget {
         // ],
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Center(
-            child: Container(
-              width: double.infinity,
-              child: Padding(
-                padding: const EdgeInsets.all(25.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              "Full Name",
-                              style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              " (As per PAN)",
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey.shade600,
-                                // fontWeight: FontWeight.bold,
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Column(
+              children: [
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Container(
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                "Full Name",
+                                style: TextStyle(
+                                    fontSize: 12, fontWeight: FontWeight.bold),
                               ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        TextFieldCustome(
-                          placeholder: "Full Name",
-                        ),
-
-                        // ---------------------------------------------------------------
-                        SizedBox(
-                          height: 30,
-                        ),
-                        Row(
-                          children: [
-                            Text(
-                              "Date of Birth",
-                              style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              " (As per PAN)",
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey.shade600,
-                                // fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        InkWell(
-                          onTap: () async {
-                            DateTime? datePicker = await showDatePicker(
-                              context: context,
-                              initialDate: DateTime.now(),
-                              firstDate: DateTime.now(),
-                              lastDate: DateTime(DateTime.now().year,
-                                  DateTime.now().month + 2, 0),
-                            );
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.grey[200],
-                              border: Border.all(width: 1, color: Colors.white),
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Row(
-                              children: [
-                                SizedBox(
-                                  width: 15,
+                              Text(
+                                " (As per PAN)",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.grey.shade600,
+                                  // fontWeight: FontWeight.bold,
                                 ),
-                                Expanded(
-                                  child: TextField(
-                                    enabled: false,
-                                    keyboardType: TextInputType.phone,
-                                    decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      hintText: "19-01-1996",
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          TextFieldCustome(
+                            placeholder: "Full Name",
+                          ),
+
+                          // ---------------------------------------------------------------
+                          SizedBox(
+                            height: 30,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "Date of Birth",
+                                style: TextStyle(
+                                    fontSize: 12, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                " (As per PAN)",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.grey.shade600,
+                                  // fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          InkWell(
+                            onTap: () async {
+                              DateTime? datePicker = await showDatePicker(
+                                context: context,
+                                initialDate: DateTime.now(),
+                                firstDate: DateTime.now(),
+                                lastDate: DateTime(DateTime.now().year,
+                                    DateTime.now().month + 2, 0),
+                              );
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.grey[200],
+                                border:
+                                    Border.all(width: 1, color: Colors.white),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Expanded(
+                                    child: TextField(
+                                      enabled: false,
+                                      keyboardType: TextInputType.phone,
+                                      decoration: InputDecoration(
+                                        border: InputBorder.none,
+                                        hintText: "19-01-1996",
+                                      ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
 
-                        // -----------------------------------------------------
+                          // -----------------------------------------------------
 
-                        SizedBox(
-                          height: 30,
-                        ),
+                          SizedBox(
+                            height: 30,
+                          ),
 
-                        Row(
-                          children: [
-                            Text(
-                              "Enter PAN",
-                              style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              "",
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey.shade600,
-                                // fontWeight: FontWeight.bold,
+                          Row(
+                            children: [
+                              Text(
+                                "Enter PAN",
+                                style: TextStyle(
+                                    fontSize: 12, fontWeight: FontWeight.bold),
                               ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        TextFieldCustome(
-                          placeholder: "LHGYN3793G",
-                        ),
-
-                        // ------------------------------------------------------
-
-                        SizedBox(
-                          height: 30,
-                        ),
-
-                        Row(
-                          children: [
-                            Text(
-                              "Pincode",
-                              style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              "",
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey.shade600,
-                                // fontWeight: FontWeight.bold,
+                              Text(
+                                "",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.grey.shade600,
+                                  // fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        TextFieldCustome(
-                          placeholder: "eg. 800001",
-                        ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          TextFieldCustome(
+                            placeholder: "LHGYN3793G",
+                          ),
 
-                        // *******************************************************
-                      ],
+                          // ------------------------------------------------------
+
+                          SizedBox(
+                            height: 30,
+                          ),
+
+                          Row(
+                            children: [
+                              Text(
+                                "Pincode",
+                                style: TextStyle(
+                                    fontSize: 12, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                "",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.grey.shade600,
+                                  // fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          TextFieldCustome(
+                            placeholder: "eg. 800001",
+                          ),
+
+                          // *******************************************************
+                        ],
+                      ),
                     ),
-
-                    // ################################################################
-
-                    SizedBox(
-                      height: 250,
-                    ),
-                    RectangleRoundedButton(
-                      buttonName: "Next",
-                      icon: const Icon(Icons.chevron_right),
-                    )
-                  ],
+                  ),
                 ),
-              ),
+
+                // Button####################################################################
+                Container(
+                  child: RectangleRoundedButton(
+                    buttonName: "Next",
+                    icon: const Icon(Icons.chevron_right),
+                  ),
+                ),
+              ],
             ),
           ),
         ),

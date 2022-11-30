@@ -31,9 +31,9 @@ class MyApp extends StatelessWidget {
       // home: MyHomePage(),
       // home: LoginScreen(),
       // home: OtpScreen(),
-      // home: const SplashScreen(),
+      home: const SplashScreen(),
       // home: const DashboardScreen(),
-      home: PersonalScreen(),
+      // home: PersonalScreen(),
     );
   }
 }

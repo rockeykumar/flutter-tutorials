@@ -12,33 +12,42 @@ class TextFieldCustome extends StatelessWidget {
 
   final double borderRadiusValue = 12;
 
+  Color borderColor = Colors.white;
+
   TextEditingController countryCode = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.grey[200],
-          border: Border.all(width: 1, color: Colors.white),
-          borderRadius: BorderRadius.circular(borderRadiusValue),
-        ),
-        child: Row(
-          children: [
-            SizedBox(
-              width: 15,
-            ),
-            Expanded(
-              child: TextField(
-                keyboardType: TextInputType.phone,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: placeholder,
+      child: Row(
+        children: [
+          Expanded(
+            child: TextField(
+              maxLines: 1,
+              minLines: 1,
+              keyboardType: TextInputType.phone,
+              decoration: InputDecoration(
+                isDense: true,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                filled: true,
+                fillColor: Colors.grey.shade200,
+                hintText: placeholder,
+                contentPadding:
+                    EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                // focusedBorder: OutlineInputBorder(
+                //   borderRadius: BorderRadius.circular(8),
+                //   borderSide: BorderSide(color: Colors.green),
+                // ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(color: Colors.white),
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

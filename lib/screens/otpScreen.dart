@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_app/Widgets/optInputTextField.dart';
 import 'package:flutter_app/Widgets/rectangleRoundedButton.dart';
 import 'package:flutter_app/components/inputBox.dart';
+import 'package:flutter_app/screens/personalScreen.dart';
 
 class OtpScreen extends StatelessWidget {
   const OtpScreen({super.key});
@@ -11,9 +12,9 @@ class OtpScreen extends StatelessWidget {
   final double borderRadiusValue = 12;
   final double height_width_of_logo = 50;
 
-  void goToLoginPage(BuildContext context) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const OtpScreen()));
+  void goToPersonalPage(BuildContext context) {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => const PersonalScreen()));
   }
 
   @override
@@ -134,7 +135,7 @@ class OtpScreen extends StatelessWidget {
                     RectangleRoundedButton(
                       buttonName: 'Verify',
                       icon: Icon(Icons.check_outlined),
-                      callback: () => print("callback function"),
+                      callback: () => goToPersonalPage(context),
                     ),
                   ],
                 ),
