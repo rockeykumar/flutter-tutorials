@@ -6,7 +6,9 @@ import 'package:flutter/src/widgets/framework.dart';
 
 class TimerCountDown extends StatefulWidget {
   final int? counterValueInSeconds;
-  const TimerCountDown({super.key, this.counterValueInSeconds = 180});
+  final VoidCallback? callback;
+  const TimerCountDown(
+      {super.key, this.counterValueInSeconds = 179, this.callback});
 
   @override
   State<TimerCountDown> createState() =>
@@ -14,7 +16,7 @@ class TimerCountDown extends StatefulWidget {
 }
 
 class _TimerCountDownState extends State<TimerCountDown> {
-  String secondString = "00", minutesString = "00";
+  String minutesString = "03", secondString = "00";
   late int _Counter;
   late Timer _timer;
 
@@ -40,16 +42,17 @@ class _TimerCountDownState extends State<TimerCountDown> {
 
       if (_Counter >= 0) {
         setState(() {
+          print("Counter for check: $_Counter");
           _Counter--;
         });
       } else {
-        // _Counter = 0;
-        // print("Counter: $_Counter");
         showDialog(
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: Text("Time Up"),
+              title: Text("OTP Expired"),
+              content:
+                  Text("Generate new otp for mobile number verification...!"),
               actions: [
                 ElevatedButton(
                     onPressed: () {
@@ -69,6 +72,12 @@ class _TimerCountDownState extends State<TimerCountDown> {
   void initState() {
     super.initState();
     startTimer();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _timer.cancel();
   }
 
   @override

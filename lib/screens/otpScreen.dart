@@ -14,7 +14,7 @@ class OtpScreen extends StatelessWidget {
   final double height_width_of_logo = 50;
 
   void goToPersonalPage(BuildContext context) {
-    Navigator.push(context,
+    Navigator.pushReplacement(context,
         MaterialPageRoute(builder: (context) => const PersonalScreen()));
   }
 
@@ -122,7 +122,7 @@ class OtpScreen extends StatelessWidget {
 
                     // Expired OTP Counter
                     const SizedBox(height: 20),
-                    TimerCountDown(counterValueInSeconds: 10),
+                    TimerCountDown(),
                     // Text(
                     //   "02:59",
                     //   style: TextStyle(
