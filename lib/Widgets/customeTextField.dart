@@ -25,7 +25,7 @@ class TextFieldCustome extends StatelessWidget {
             child: TextField(
               maxLines: 1,
               minLines: 1,
-              keyboardType: TextInputType.phone,
+              // keyboardType: TextInputType.streetAddress,
               decoration: InputDecoration(
                 isDense: true,
                 border: OutlineInputBorder(

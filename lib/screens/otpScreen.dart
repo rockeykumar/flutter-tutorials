@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_app/Widgets/optInputTextField.dart';
 import 'package:flutter_app/Widgets/rectangleRoundedButton.dart';
+import 'package:flutter_app/Widgets/timerCountDown.dart';
 import 'package:flutter_app/components/inputBox.dart';
 import 'package:flutter_app/screens/personalScreen.dart';
 
@@ -41,7 +42,7 @@ class OtpScreen extends StatelessWidget {
               hoverColor: Colors.transparent,
               icon: Icon(
                 Icons.close,
-                color: Colors.deepPurple[700],
+                color: Colors.grey[850],
               ),
               onPressed: (() => Navigator.pop(context)),
             ),
@@ -121,13 +122,14 @@ class OtpScreen extends StatelessWidget {
 
                     // Expired OTP Counter
                     const SizedBox(height: 20),
-                    Text(
-                      "02:59",
-                      style: TextStyle(
-                        color: Colors.grey[850],
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                    TimerCountDown(counterValueInSeconds: 10),
+                    // Text(
+                    //   "02:59",
+                    //   style: TextStyle(
+                    //     color: Colors.grey[850],
+                    //     fontWeight: FontWeight.bold,
+                    //   ),
+                    // ),
 
                     // Button - Get OTP
                     const SizedBox(height: 30),

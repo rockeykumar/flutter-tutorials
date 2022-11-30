@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:double_back_to_close/double_back_to_close.dart';
 import 'package:flutter_app/Widgets/rectangleRoundedButton.dart';
+import 'package:flutter_app/Widgets/timerCountDown.dart';
 import 'package:flutter_app/screens/dashboard.dart';
 import 'package:flutter_app/screens/loginScreen.dart';
 import 'package:flutter_app/screens/otpScreen.dart';
@@ -26,14 +27,16 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primarySwatch: Colors.deepPurple,
-          scaffoldBackgroundColor: Colors.grey[300]),
+        primarySwatch: Colors.deepPurple,
+        scaffoldBackgroundColor: Colors.grey[300],
+      ),
+      home: const SplashScreen(),
       // home: MyHomePage(),
       // home: LoginScreen(),
       // home: OtpScreen(),
-      home: const SplashScreen(),
       // home: const DashboardScreen(),
       // home: PersonalScreen(),
+      // home: TimerCountDown(counterValueInSeconds: 180),
     );
   }
 }

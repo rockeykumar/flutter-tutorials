@@ -3,9 +3,17 @@ import 'package:flutter_app/Widgets/rectangleRoundedButton.dart';
 import 'package:flutter_app/components/inputBox.dart';
 import 'package:flutter_app/screens/otpScreen.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   final double borderRadiusValue = 12;
+  bool isChecked = false;
+
   final double height_width_of_logo = 50;
 
   void goToOTPVarificationPage(BuildContext context) {
@@ -32,7 +40,7 @@ class LoginScreen extends StatelessWidget {
               hoverColor: Colors.transparent,
               icon: Icon(
                 Icons.close,
-                color: Colors.deepPurple[700],
+                color: Colors.grey[850],
               ),
               onPressed: (() {
                 Navigator.pop(context);
@@ -113,15 +121,17 @@ class LoginScreen extends StatelessWidget {
                         width: 20,
                         child: Checkbox(
                           activeColor: Colors.deepPurple[700],
-                          value: true,
-                          onChanged: ((value) {
-                            const Text("TODO: not implemented...!");
-                          }),
+                          value: isChecked,
+                          onChanged: (bool? value) {
+                            setState(() {
+                              isChecked = value!;
+                            });
+                          },
                         ),
                       ),
                       const Text(" Received ? "),
-                      const Text(
-                        "WhatsApp Notification",
+                      Text(
+                        "WhatsApp  Notification $isChecked",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
